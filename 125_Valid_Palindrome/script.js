@@ -6,15 +6,23 @@ function isPalindrome(s) {
 }
 ;
 function isPali2(s) {
-    var fromEnd = s.length;
-    var fromBeginning = 0;
     var regex = /[A-Z\d]/;
+    if (s.trim().length === 0)
+        return true;
+    if (s.length === 1) {
+        if (s[0].toUpperCase().match(regex))
+            return true;
+        if (s === '.')
+            return true;
+    }
+    var fromEnd = s.length - 1;
+    var fromBeginning = 0;
     var i = false;
     for (; fromEnd > fromBeginning; fromEnd--, fromBeginning++) {
-        while (!s[fromEnd].match(regex) && fromEnd > fromBeginning) {
+        while (!s[fromEnd].toUpperCase().match(regex) && fromEnd > fromBeginning) {
             fromEnd--;
         }
-        while (!s[fromBeginning].match(regex) && fromBeginning < fromEnd) {
+        while (!s[fromBeginning].toUpperCase().match(regex) && fromBeginning < fromEnd) {
             fromBeginning++;
         }
         if (s[fromBeginning].toUpperCase() != s[fromEnd].toUpperCase())
