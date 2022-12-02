@@ -7,11 +7,11 @@ function pivotIndex(nums) {
     }
     console.log("sum", sum);
     var leftSum = nums[0];
-    for (var i = 1; i < nums.length; i++) {
-        console.log(i, "i", "leftSum", leftSum, "nums[i]", nums[i], "equation", sum - nums[i] - leftSum);
-        if (leftSum == sum - nums[i] - leftSum)
+    for (var i = 0; i < nums.length - 1; i++) {
+        console.log(i, "i", "leftSum", leftSum, "nums[i]", nums[i], "equation", sum - nums[i+1] - leftSum);
+        if (leftSum == sum - nums[i + 1] - leftSum)
             return i;
-        leftSum += nums[i];
+        leftSum += nums[i + 1];
     }
     return -1;
 }

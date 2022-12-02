@@ -6,7 +6,7 @@ function pivotIndex(nums: number[]): number {
   }
   console.log("sum", sum);
   let leftSum = nums[0];
-  for (let i = 1; i < nums.length; i++) {
+  for (let i = 0; i < nums.length - 1; i++) {
     console.log(
       i,
       "i",
@@ -17,8 +17,8 @@ function pivotIndex(nums: number[]): number {
       "equation",
       sum - nums[i] - leftSum
     );
-    if (leftSum == sum - nums[i] - leftSum) return i;
-    leftSum += nums[i];
+    if (leftSum == sum - nums[i + 1] - leftSum) return i;
+    leftSum += nums[i + 1];
   }
 
   return -1;
