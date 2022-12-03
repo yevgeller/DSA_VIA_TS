@@ -5,20 +5,21 @@ function pivotIndex(nums: number[]): number {
     sum += nums[i];
   }
   console.log("sum", sum);
-  let leftSum = nums[0];
+  let leftSum = 0;
   for (let i = 0; i < nums.length - 1; i++) {
-    console.log(
-      i,
-      "i",
-      "leftSum",
-      leftSum,
-      "nums[i]",
-      nums[i],
-      "equation",
-      sum - nums[i] - leftSum
-    );
-    if (leftSum == sum - nums[i + 1] - leftSum) return i;
-    leftSum += nums[i + 1];
+    let theRest = sum - nums[i] - leftSum;
+    // console.log(
+    //   i,
+    //   "i",
+    //   "leftSum",
+    //   leftSum,
+    //   "nums[i]",
+    //   nums[i],
+    //   "equation",
+    //   theRest
+    // );
+    if (leftSum == theRest) return i;
+    leftSum += nums[i];
   }
 
   return -1;
