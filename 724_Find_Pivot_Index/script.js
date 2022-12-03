@@ -7,18 +7,9 @@ function pivotIndex(nums) {
     }
     console.log("sum", sum);
     var leftSum = 0;
-    for (var i = 0; i < nums.length - 1; i++) {
+    for (var i = 0; i < nums.length; ++i) {
         var theRest = sum - nums[i] - leftSum;
-        // console.log(
-        //   i,
-        //   "i",
-        //   "leftSum",
-        //   leftSum,
-        //   "nums[i]",
-        //   nums[i],
-        //   "equation",
-        //   theRest
-        // );
+        console.log(i, "i", "leftSum", leftSum, "equation", theRest);
         if (leftSum == theRest)
             return i;
         leftSum += nums[i];
@@ -26,5 +17,6 @@ function pivotIndex(nums) {
     return -1;
 }
 //console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
-console.log(pivotIndex([2, 1, -1]));
+//console.log(pivotIndex([2, 1, -1]));
+console.log(pivotIndex([-1, -1, 0, 1, 1, 0]));
 //# sourceMappingURL=script.js.map
