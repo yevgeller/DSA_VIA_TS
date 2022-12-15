@@ -16,3 +16,16 @@ function middleNode(head: ListNode | null): ListNode | null {
   }
   return slow;
 }
+
+function middleNode2(head: ListNode | null): ListNode | null {
+  let arr = [];
+  let curr = head;
+  while (curr != null) {
+    arr.push(curr);
+    curr = curr.next;
+  }
+  let 
+  let pos = Math.round(arr.length/2);
+  console.log(pos);
+  return arr[pos];
+}
