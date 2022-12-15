@@ -19,13 +19,14 @@ function middleNode(head: ListNode | null): ListNode | null {
 
 function middleNode2(head: ListNode | null): ListNode | null {
   let arr = [];
+  arr.push(null);
   let curr = head;
   while (curr != null) {
     arr.push(curr);
     curr = curr.next;
   }
-  let 
-  let pos = Math.round(arr.length/2);
-  console.log(pos);
+  let len = arr.length;
+  let pos = Math.round(len / 2);
+  console.log("len:", len, ", mid: ", pos);
   return arr[pos];
 }
