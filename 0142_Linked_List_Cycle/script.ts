@@ -33,7 +33,7 @@ function detectCycle2(head: ListNode | null): ListNode | null {
   if (head == null) return null;
 
   let intersect = getIntersect(head);
-
+  if (intersect == null) return null;
   let ptr1 = head;
   let ptr2 = intersect;
 
