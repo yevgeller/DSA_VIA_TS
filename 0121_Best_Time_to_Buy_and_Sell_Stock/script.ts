@@ -6,8 +6,7 @@ function maxProfit(prices: number[]): number {
     let interim = prices[i] - minPrice;
 
     if (prices[i] < minPrice) minPrice = prices[i];
-    else if (parseFloat(interim.toString()) > parseFloat(maxProfit.toString()))
-      maxprofit = prices[i] - minPrice;
+    else if (prices[i] - minPrice > maxprofit) maxprofit = prices[i] - minPrice;
   }
 
   return maxprofit;
