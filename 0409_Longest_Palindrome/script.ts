@@ -6,7 +6,7 @@ function longestPalindrome(s: string): number {
     let key = s[i];
     if (chars.has(key)) {
       let val = chars.get(key);
-      chars.set(key, val++);
+      chars.set(key, ++val);
     } else {
       chars.set(key, 1);
     }
@@ -16,9 +16,12 @@ function longestPalindrome(s: string): number {
   for (let entry of Array.from(chars.entries())) {
     let key = entry[0];
     let value = entry[1];
-    ans += (value % 2) * 2;
+    ans += (Math.floor(value / 2)) * 2;
     if (ans % 2 === 0 && value % 2 === 1) ans += 1;
   }
+
+  return ans;
+}
 
   // map.set(key, value) – adds a new entry in the Map.
   // map.get(key) – retrieves the value for a given key from the Map.
@@ -26,7 +29,4 @@ function longestPalindrome(s: string): number {
   // for (let [key, value] of nameAgeMapping) {
   //     console.log(key, value);            //"Lokesh" 37 "Raj" 35 "John" 40
   // }
-  return ans;
-}
-
-longestPalindrome("abccccdd");
+console.log(longestPalindrome("abccccdd"));
