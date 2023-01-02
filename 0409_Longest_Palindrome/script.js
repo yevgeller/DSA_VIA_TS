@@ -21,12 +21,6 @@ function longestPalindrome(s) {
         if (ans % 2 === 0 && value % 2 === 1)
             ans += 1;
     }
-    // map.set(key, value) – adds a new entry in the Map.
-    // map.get(key) – retrieves the value for a given key from the Map.
-    // map.has(key) – checks if a key is present in the Map. Returns true or false.
-    // for (let [key, value] of nameAgeMapping) {
-    //     console.log(key, value);            //"Lokesh" 37 "Raj" 35 "John" 40
-    // }
     return ans;
 }
 console.log(longestPalindrome("abccccdd"));
