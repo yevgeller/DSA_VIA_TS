@@ -1,16 +1,20 @@
 function search(nums: number[], target: number): number {
-let min = 0;
-let border = nums.length / 2;
+    return look2(nums, target, 0, nums.length);
 
-if(nums[border] == target) return border;
-if(nums[border]<target)
-{
-    return look(nums, target, border, nums.length);
-} else {
-    return look(nums, target, 0, border);
+// let middle = nums.length / 2;
+
+// if(nums[middle] == target) return middle;
+// if(nums[middle]<target)
+// {
+//     return look(nums, target, middle, nums.length);
+// } else {
+//     return look(nums, target, 0, middle);
+// }
+
+
 }
 
-return look(nums, target, min, max);
+function look2(nums: number[], target: number, min: number, max: number): number {
 
 }
 
