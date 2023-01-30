@@ -1,4 +1,5 @@
 function search(nums: number[], target: number): number {
+    if(nums.length === 0) return -1;
   return searchTwo(nums, target, 0, nums.length);
 }
 
@@ -8,8 +9,8 @@ function searchTwo(
   min: number,
   max: number
 ): number {
-  debugger;
-  let mid = Math.floor((max - min) / 2) + min - 1;
+
+    let mid = Math.floor((max - min) / 2) + min - 1;
 
   if (nums[mid] == target) {
     return mid;
