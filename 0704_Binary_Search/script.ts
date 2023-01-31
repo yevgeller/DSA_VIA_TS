@@ -3,6 +3,12 @@ function search(nums: number[], target: number): number {
     right = nums.length;
   while (left <= right) {
     let mid = Math.floor((left - right) / 2) + left;
+    if(nums[mid] == target) return mid;
+
+    if(nums[mid]<target) {
+        left = mid+1;
+
+    }
   }
 
   if (nums.length === 0) return -1;
