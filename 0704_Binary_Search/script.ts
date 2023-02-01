@@ -1,4 +1,6 @@
 function search(nums: number[], target: number): number {
+  if (nums.length === 0) return -1;
+  if (nums.length === 1 && target === nums[0]) return 0;
   let left = 0,
     right = nums.length;
   while (left <= right) {
@@ -11,28 +13,6 @@ function search(nums: number[], target: number): number {
     if (nums[mid] > target) {
       right = mid - 1;
     }
-  }
-
-  if (nums.length === 0) return -1;
-  if (nums.length === 1 && target === nums[0]) return 0;
-  return searchTwo(nums, target, 0, nums.length);
-}
-
-function searchTwo(
-  nums: number[],
-  target: number,
-  min: number,
-  max: number
-): number {
-  if (min >= max && nums[min] !== target) return -1;
-  let mid = Math.floor((max - min) / 2) + min - 1;
-
-  if (nums[mid] == target) {
-    return mid;
-  } else if (nums[mid] < target) {
-    return searchTwo(nums, target, mid + 1, max);
-  } else {
-    return searchTwo(nums, target, min, mid - 1);
   }
 }
 
