@@ -4,7 +4,8 @@ function search(nums: number[], target: number): number {
   let left = 0,
     right = nums.length;
   while (left <= right) {
-    let mid = Math.floor((left - right) / 2) + left;
+    debugger;
+    let mid = Math.floor((right - left) / 2) + left;
     if (nums[mid] == target) return mid;
 
     if (nums[mid] < target) {
