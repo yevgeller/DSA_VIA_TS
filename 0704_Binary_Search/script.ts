@@ -7,14 +7,13 @@ function search(nums: number[], target: number): number {
     debugger;
     let mid = Math.floor((right - left) / 2) + left;
     if (nums[mid] == target) return mid;
-
-    if (nums[mid] < target) {
+    else if (nums[mid] < target) {
       left = mid + 1;
-    }
-    if (nums[mid] > target) {
+    } else {
       right = mid - 1;
     }
   }
+  return -1;
 }
 
-search([-1, 0, 3, 5, 9, 12], 9);
+search([-1, 0, 3, 5, 9, 12], 13);
