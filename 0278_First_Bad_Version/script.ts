@@ -4,18 +4,21 @@
  *     ...
  * };
  */
-//Implement a function to find the first bad version. 
+//Implement a function to find the first bad version.
 var solution = function (isBadVersion: any) {
   return function (n: number): number {
     let min = 0,
       max = n;
     while (min <= max) {
-      let mid = (max - min) / 2 + min;
-      if(!isBadVersion(mid)){
+      let mid = Math.floor((max - min) / 2 + min);
+      if (!isBadVersion(mid)) {
         //bad version, need to move on
-        if(isBadVersion(mid+1)){
-            return 
+        if (isBadVersion(mid + 1)) {
+          return mid + 1;
         }
+        min = mid;
+      } else {
+        max = mid;
       }
     }
 
