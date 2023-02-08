@@ -12,4 +12,7 @@
  * }
  */
 
-function isValidBST(root: TreeNode | null): boolean {}
+function isValidBST(root: TreeNode | null): boolean {
+
+    return false;
+}
