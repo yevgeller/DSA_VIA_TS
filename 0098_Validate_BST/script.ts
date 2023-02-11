@@ -51,12 +51,16 @@ function isValidBST2(root: TreeNode | null): boolean {
   return true;
 }
 
-// //https://leetcode.com/problems/validate-binary-search-tree/solutions/783930/easy-to-understand-2-lines-solution-o-n-with-examples-and-explanation-javascript/
-// function isValidBST3(root: TreeNode | null): boolean {
-//   if (!root) return true;
-//   return (
-//     !(root.val <= min || root.val >= max) &&
-//     isValidBST(root.left, min, root.val) &&
-//     isValidBST(root.right, root.val, max)
-//   );
-// }
+//https://leetcode.com/problems/validate-binary-search-tree/solutions/783930/easy-to-understand-2-lines-solution-o-n-with-examples-and-explanation-javascript/
+function isValidBST3(
+  root: TreeNode | null,
+  min = -Infinity,
+  max = Infinity
+): boolean {
+  if (!root) return true;
+  return (
+    !(root.val <= min || root.val >= max) &&
+    isValidBST3(root.left, min, root.val) &&
+    isValidBST3(root.right, root.val, max)
+  );
+}
