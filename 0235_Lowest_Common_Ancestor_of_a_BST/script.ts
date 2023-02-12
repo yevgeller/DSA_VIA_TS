@@ -1,6 +1,6 @@
 //https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/solutions/2508999/typescript-javascript-dfs-with-comments/
 
-function lowestCommonAncestor(
+function lowestCommonAncestor2(
   root: TreeNode | null,
   p: TreeNode | null,
   q: TreeNode | null
@@ -23,4 +23,17 @@ function dfs(root: TreeNode | null, p: TreeNode | null, q: TreeNode | null) {
   // if there's a split
   // then we found our LCS
   return root;
+}
+
+
+function lowestCommonAncestor(
+  root: TreeNode | null,
+  p: TreeNode | null,
+  q: TreeNode | null
+): TreeNode | null {
+ return root.val < Math.min(p.val, q.val)
+    ? lowestCommonAncestor(root.right, p, q)
+    : root.val > Math.max(p.val, q.val)
+    ? lowestCommonAncestor(root.left, p, q)
+    : root;
 }
